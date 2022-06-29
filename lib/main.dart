@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 //Importando o componente MyApp
-import './screens/myapp.dart';
+import './src/screens/myapp.dart';
 
 //Método principal para executar a aplicação
 void main() {

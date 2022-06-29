@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 //Importando o componente HomePage
-import './home/home_page.dart';
+import '../home/home_page.dart';
 
 class MyApp extends StatelessWidget {
   //Identificador na árvore de Widgets
