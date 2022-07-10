@@ -1,7 +1,7 @@
 # App To Do
 
 A new Flutter project.
-
+This is a To Do application, where the user can add, delete and edit it´s tasks. It's a recreation of an To-Do app that i made in React Native;
 ## Getting Started
 
 This project is a starting point for a Flutter application.
