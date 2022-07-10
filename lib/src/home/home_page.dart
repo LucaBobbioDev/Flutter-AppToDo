@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                         context: context,
                         backgroundColor: const Color.fromARGB(235, 64, 74, 94),
                         builder: (context) {
-                          return Container(
+                          return SizedBox(
                               height: 2000,
                               child: Column(
                                 // ignore: prefer_const_literals_to_create_immutables
@@ -88,26 +88,25 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   TextField(
                                       controller: editController,
-                                      style:
-                                          const TextStyle(color: Colors.white),
-                                      textCapitalization:
-                                          TextCapitalization.words,
+                                      style:const TextStyle(color: Colors.white),
+                                      textCapitalization: TextCapitalization.words,
                                       decoration: const InputDecoration(
                                         hintText: 'Digite sua tarefa:',
                                         hintStyle: TextStyle(
-                                          color:
-                                              Color.fromARGB(220, 255, 46, 98),
+                                          color:Color.fromARGB(220, 255, 46, 98),
                                         ),
                                         contentPadding: EdgeInsets.all(10),
-                                      )),
+                                      )
+                                  ),
                                   IconButton(
                                       onPressed: () {
                                         final newText = editController.text;
                                         setState(() {
                                           list.removeAt(index);
                                           list.add(newText);
-                                          editController.clear();
                                         });
+                                        editController.clear();
+                                        FocusScope.of(context).unfocus();
                                       },
                                       icon: const Icon(
                                         Icons.add_task,
