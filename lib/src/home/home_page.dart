@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: const Color.fromARGB(220, 255, 46, 98),
       ),
       body: Center(
-        child: Column(
+          child: Column(
         children: [
           Row(
             children: [
@@ -88,8 +88,10 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   TextField(
                                       controller: editController,
-                                      style: const TextStyle(color: Colors.white),
-                                      textCapitalization: TextCapitalization.words,
+                                      style:
+                                          const TextStyle(color: Colors.white),
+                                      textCapitalization:
+                                          TextCapitalization.words,
                                       decoration: const InputDecoration(
                                         hintText: 'Digite sua tarefa:',
                                         hintStyle: TextStyle(
@@ -97,11 +99,22 @@ class _HomePageState extends State<HomePage> {
                                               Color.fromARGB(220, 255, 46, 98),
                                         ),
                                         contentPadding: EdgeInsets.all(10),
-                                      )
-                                  ),
+                                      )),
+                                  IconButton(
+                                      onPressed: () {
+                                        final newText = editController.text;
+                                        setState(() {
+                                          list.removeAt(index);
+                                          list.add(newText);
+                                          editController.clear();
+                                        });
+                                      },
+                                      icon: const Icon(
+                                        Icons.add_task,
+                                        color: Color.fromARGB(220, 255, 46, 98),
+                                      ))
                                 ],
-                              )
-                          );
+                              ));
                         },
                       );
                     },
